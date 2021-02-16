@@ -10,6 +10,7 @@ app.use(serveStatic("./public"));
 app.use(static);
 app.use("/index.html", index);
 app.use("/sobre.html", sobre);
+app.use("/techs.html", techs);
 
 function static(req, res, next) {
     res.setHeader("Content-type", "text/html");
@@ -30,6 +31,18 @@ function sobre(req, res, next) {
         <label>email de contato: seany.caroliny@estudante.ufjf.br</label>
     </div>
     `);
+}
+
+function techs(req, res, next) {
+    let tecnologias = ['C', 'C++', 'Java', 'JavaScript', 'Python', 'Node.js', 'SQL', 'PostgreSQL', 'Insomnia', 'Intellij Idea', 'Visual Studio Code', 'NetBeans', 'Code Blocks', 'Spyder', 'BlueJ', 'Spring Boot', 'React', 'Bootstrap', 'Entre outras'];
+    res.end(`
+    <h1>Tecnologias já utilizadas</h1>
+    <ul> 
+        ${tecnologias.map(function(tecnologia, index){
+           return `<li id=${index}>${tecnologia}</li>`;
+        }).join("\n")}  
+    </ul>`
+    );
 }
 
 function logger(req, res, next) {
