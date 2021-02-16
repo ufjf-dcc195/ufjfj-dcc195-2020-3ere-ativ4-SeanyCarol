@@ -1,8 +1,11 @@
 const connect = require("connect");
 const serveStatic = require("serve-static");
+const morgan = require("morgan");
 
 const app = connect();
 app.listen(3000);
+app.use(logger);
+app.use(morgan("combined"));
 app.use(serveStatic("./public"));
 app.use(static);
 app.use("/index.html", index);
@@ -27,6 +30,11 @@ function sobre(req, res, next) {
         <label>email de contato: seany.caroliny@estudante.ufjf.br</label>
     </div>
     `);
+}
+
+function logger(req, res, next) {
+    console.log(`Nova requisição!!\n`, req.url);
+    next();
 }
 
 console.log("Servidor escutando em http://localhost:3000");
