@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ufjf-dcc195/ufjfj-dcc195-2020-3ere-ativ4-SeanyCarol/issues"
   },
-  "homepage": "https://github.com/ufjf-dcc195/ufjfj-dcc195-2020-3ere-ativ4-SeanyCarol#readme"
+  "homepage": "https://github.com/ufjf-dcc195/ufjfj-dcc195-2020-3ere-ativ4-SeanyCarol#readme",
+  "dependencies": {
+    "connect": "^3.7.0"
+  }
 }
