@@ -19,7 +19,10 @@ function static(req, res, next) {
 }
 
 function index(req, res, next) {
-    res.end("<h1>Bem vindo!</h1>");
+    res.end(`<h1>Bem vindo!</h1>
+    <a href="/sobre.html">Sobre</a> </br>
+    <a href="/techs.html">Tecnologias</a> 
+    `);
 }
 
 function sobre(req, res, next) {
