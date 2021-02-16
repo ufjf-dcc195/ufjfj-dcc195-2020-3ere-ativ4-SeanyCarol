@@ -1,9 +1,10 @@
 const connect = require("connect");
 const serveStatic = require("serve-static");
 const morgan = require("morgan");
+const PORT = process.env.PORT ?? 3000;
 
 const app = connect();
-app.listen(3000);
+app.listen(PORT);
 app.use(logger);
 app.use(morgan("combined"));
 app.use(serveStatic("./public"));
@@ -53,4 +54,4 @@ function logger(req, res, next) {
     next();
 }
 
-console.log("Servidor escutando em http://localhost:3000");
+console.log(`Servidor escutando em http://localhost:${PORT}`);
